@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Karyawan - SIPEKAT</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <!-- Tombol Toggle Sidebar -->
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <div id="sidebar-container">
+    <!-- akan include sidebar.html -->
+  </div>
+
+  <!-- Konten Utama -->
+  <div class="main-content">
+    <!-- Topbar -->
+    <div id="topbar-container">
+      <!-- akan include topbar.html -->
+    </div>
+
+    <!-- Isi Dashboard -->
+    <div class="dashboard-container">
+      <!-- Salam dan ilustrasi -->
+      <div class="greeting-card">
+        <div>
+          <p class="tanggal">Senin, 4 Juli 2024</p>
+          <h2>Selamat Malam, Sultan!</h2>
+        </div>
+        <img src="assets/ilustrasi-sambutan.png" alt="Ilustrasi" />
+      </div>
+
+      <!-- Present Percentage -->
+      <div class="present-box">
+        <div class="present-item">On Duty<br><strong>0</strong></div>
+        <div class="present-item">On Duty<br><strong>0</strong></div>
+        <div class="present-item">On Duty<br><strong>0</strong></div>
+        <div class="present-item">On Duty<br><strong>0</strong></div>
+      </div>
+
+      <!-- Kalender -->
+      <div class="calendar-container">
+        <input type="date" class="calendar-input" />
+      </div>
+
+      <!-- Leaderboard -->
+      <div class="leaderboard">
+        <h3>Leaderboard</h3>
+        <p>10 Teratas Peminjam ATK Kantor</p>
+        <div class="leaderboard-tabs">
+          <button class="active">Hari</button>
+          <button>Mingguan</button>
+          <button>Bulanan</button>
+        </div>
+        <ul class="leaderboard-list">
+          <li><span class="avatar"></span> Sultan Muhammad Prakoso <strong>4 Barang</strong></li>
+          <li><span class="avatar"></span> Sultan Muhammad Prakoso <strong>3 Barang</strong></li>
+          <li><span class="avatar"></span> Sultan Muhammad Prakoso <strong>1 Barang</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+    
+      <script src="js/script.js"></script>
+</body>
+</html>

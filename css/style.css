@@ -1,0 +1,778 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* SPLASH SCREEN */
+body.splash-body {
+  background-color: #176A4D;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+
+.splash-container {
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.splash-logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.splash-title {
+  font-size: 36px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.splash-subtitle {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.splash-footer {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* LOGIN */
+body.login-body {
+  background-color: #f7f7f7;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 400px; /* atau samakan saja dengan Google button */
+  max-width: 90%;
+  padding: 32px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+
+.login-logo {
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #176A4D;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+
+
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field .toggle-password {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #999;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: #116b3f; /* warna hijau SIPEKAT */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.login-divider {
+  margin: 20px 0 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.google-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.google-login img {
+  width: 20px;
+}
+
+.login-note {
+  font-size: 12px;
+  margin-top: 15px;
+  color: #888;
+}
+
+.login-note a {
+  color: #176A4D;
+  text-decoration: none;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.password-field input {
+  width: 100%;
+  padding: 12px 40px 12px 15px; /* ada ruang kanan untuk icon */
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.eye-icon:hover {
+  opacity: 1;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f4;
+  display: flex;
+}
+
+/* Sidebar */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f4;
+  display: flex;
+}
+
+.toggle-btn {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  font-size: 24px;
+  background: none;
+  border: none;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 250px;
+  transition: all 0.3s;
+  float: left;
+}
+
+.sidebar.hide {
+  width: 0;
+  overflow: hidden;
+}
+
+.logo-sidebar {
+  display: block;
+  margin: 0 auto;
+  width: 60px;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 1rem auto;
+  display: block;
+  object-fit: cover;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.menu-list li {
+  padding: 10px 20px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-list li img {
+  margin-right: 10px;
+}
+
+.logout-btn {
+  margin: 2rem auto 0;
+  display: block;
+  background-color: #1e6f50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Konten */
+.main-content {
+  margin-left: 250px;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.main-content.full {
+  margin-left: 0;
+}
+
+.sidebar.hide + .main-content {
+  margin-left: 0;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.greeting-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #dff0d8;
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+.present-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #116f42;
+  border-radius: 10px;
+  color: white;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.present-item {
+  background: white;
+  color: #116f42;
+  text-align: center;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.calendar-container {
+  background: #f1f8f5;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.calendar-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.leaderboard {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.leaderboard-tabs {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.leaderboard-tabs button {
+  padding: 6px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.leaderboard-tabs .active {
+  font-weight: bold;
+  border-bottom: 2px solid #116f42;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+}
+
+.leaderboard-list li {
+  background: #f6f6f6;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* GLOBAL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* SPLASH SCREEN */
+body.splash-body {
+  background-color: #176A4D;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.splash-container {
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.splash-logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.splash-title {
+  font-size: 36px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.splash-subtitle {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.splash-footer {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* LOGIN */
+body.login-body {
+  background-color: #f7f7f7;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 400px; /* atau samakan saja dengan Google button */
+  max-width: 90%;
+  padding: 32px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+
+.login-logo {
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #176A4D;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+
+
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field .toggle-password {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #999;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: #116b3f; /* warna hijau SIPEKAT */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.login-divider {
+  margin: 20px 0 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.google-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.google-login img {
+  width: 20px;
+}
+
+.login-note {
+  font-size: 12px;
+  margin-top: 15px;
+  color: #888;
+}
+
+.login-note a {
+  color: #176A4D;
+  text-decoration: none;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.password-field input {
+  width: 100%;
+  padding: 12px 40px 12px 15px; /* ada ruang kanan untuk icon */
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.eye-icon:hover {
+  opacity: 1;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f4;
+  display: flex;
+}
+
+/* Sidebar */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f4;
+  display: flex;
+}
+
+.toggle-btn {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  font-size: 24px;
+  background: none;
+  border: none;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 250px;
+  transition: all 0.3s;
+  float: left;
+}
+
+.sidebar.hide {
+  width: 0;
+  overflow: hidden;
+}
+
+.logo-sidebar {
+  display: block;
+  margin: 0 auto;
+  width: 60px;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 1rem auto;
+  display: block;
+  object-fit: cover;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.menu-list li {
+  padding: 10px 20px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-list li img {
+  margin-right: 10px;
+}
+
+.logout-btn {
+  margin: 2rem auto 0;
+  display: block;
+  background-color: #1e6f50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Konten */
+.main-content {
+  margin-left: 250px;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.main-content.full {
+  margin-left: 0;
+}
+
+.sidebar.hide + .main-content {
+  margin-left: 0;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.greeting-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #dff0d8;
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+.present-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #116f42;
+  border-radius: 10px;
+  color: white;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.present-item {
+  background: white;
+  color: #116f42;
+  text-align: center;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.calendar-container {
+  background: #f1f8f5;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.calendar-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.leaderboard {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.leaderboard-tabs {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.leaderboard-tabs button {
+  padding: 6px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.leaderboard-tabs .active {
+  font-weight: bold;
+  border-bottom: 2px solid #116f42;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+}
+
+.leaderboard-list li {
+  background: #f6f6f6;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    width: 250px;
+    position: relative;
+    height: auto;
+  }
+
+  .main-content {
+    margin-left: 250px;
+  }
+
+  .sidebar.hide {
+    width: 0;
+  }
+
+  .main-content.full {
+    margin-left: 0;
+  }
+}
+
+
