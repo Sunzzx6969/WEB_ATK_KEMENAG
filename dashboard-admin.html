@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #E6F4EA;
+      height: 100vh;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1030;
+      box-shadow: 6px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar .logo {
+      width: 60px;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+
+    .sidebar .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+
+    .sidebar .nav-link {
+      color: #1f3d1b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-logout {
+      background-color: #1f3d1b;
+      color: white;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 2rem;
+    }
+
+    .present-box {
+      background-color: #1f3d1b;
+      color: white;
+      border-radius: 10px;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .present-box .box {
+      background-color: white;
+      color: black;
+      padding: 0.8rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+      border: 2px solid #ccc;
+    }
+
+    .calendar-box {
+      background-color: #dff3e6;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1.5rem;
+    }
+
+    .leaderboard {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .leaderboard .item {
+      background-color: #f9f9f9;
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .circle-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ccc;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="assets/kemenag-kotamalang.png" alt="Logo" class="logo" />
+    <img src="assets/foto-admin.jpg" alt="Admin" class="profile-pic my-3" />
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-2" href="profile-admin.html">
+          <img src="assets/user.svg" width="20" /> Profil <span class="ms-auto">›</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-2" href="riwayat-admin.html">
+          <img src="assets/history.svg" width="20" /> Riwayat <span class="ms-auto">›</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-2" href="persetujuan.html">
+          <img src="assets/book-plus.svg" width="20" /> Pengajuan ATK <span class="ms-auto">›</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-2" href="inventaris.html">
+          <img src="assets/warehouse.svg" width="20" /> Inventaris <span class="ms-auto">›</span>
+        </a>
+      </li>
+    </ul>
+    <a href="login.html" class="btn btn-logout mt-4" onclick="return confirm('Yakin ingin keluar?')">Keluar</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded mb-4">
+      <div>
+        <p class="mb-0">Senin, 4 Juli 2024</p>
+        <h5>Selamat Datang, Admin!</h5>
+      </div>
+      <img src="assets/illustration.png" alt="Ilustrasi" style="width: 80px;" />
+    </div>
+
+    <!-- Present Percentage -->
+    <div class="present-box">
+      <div class="box">
+        <p>On Duty</p>
+        <h4>0</h4>
+      </div>
+      <div class="box">
+        <p>On Duty</p>
+        <h4>0</h4>
+      </div>
+      <div class="box">
+        <p>On Duty</p>
+        <h4>0</h4>
+      </div>
+      <div class="box">
+        <p>On Duty</p>
+        <h4>0</h4>
+      </div>
+    </div>
+
+    <!-- Kalender -->
+    <div class="calendar-box">
+      <iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FJakarta&showTitle=0&showNav=1&showDate=1&showTabs=0&showCalendars=0&showTz=0"
+        style="border:solid 1px #777" width="100%" height="400" frameborder="0" scrolling="no">
+      </iframe>
+    </div>
+
+    <!-- Leaderboard -->
+    <div class="leaderboard">
+      <h5 class="mb-3">Leader Board</h5>
+      <p class="text-muted">10 Teratas Peminjam ATK Kantor</p>
+      <ul class="nav nav-tabs" id="leaderTab" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#harian">Harian</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#mingguan">Mingguan</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bulanan">Bulanan</button>
+        </li>
+      </ul>
+      <div class="tab-content mt-3">
+        <div class="tab-pane fade show active" id="harian">
+          <div class="item d-flex align-items-center">
+            <span class="circle-img"></span>
+            <div>
+              <strong>Sultan Muhammad Prakoso</strong><br><small>4 Barang</small>
+            </div>
+          </div>
+          <div class="item d-flex align-items-center">
+            <span class="circle-img"></span>
+            <div>
+              <strong>Sultan Muhammad Prakoso</strong><br><small>3 Barang</small>
+            </div>
+          </div>
+          <div class="item d-flex align-items-center">
+            <span class="circle-img"></span>
+            <div>
+              <strong>Sultan Muhammad Prakoso</strong><br><small>1 Barang</small>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="mingguan"></div>
+        <div class="tab-pane fade" id="bulanan"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
