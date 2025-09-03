@@ -19,75 +19,43 @@
 
     <form id="loginForm">
       <div class="mb-3">
-        <input type="email" id="email" class="form-control" placeholder="Masukkan Email" required />
+        <input type="text" id="identifier" class="form-control" placeholder="Masukkan NIP atau Username Admin" required />
       </div>
-      <div class="mb-3 position-relative">
+
+      <div class="mb-3">
         <input type="password" id="password" class="form-control" placeholder="Masukkan Kata Sandi" required />
-        <img src="assets/eye.svg" class="position-absolute top-50 end-0 translate-middle-y me-3"
-          style="width: 20px; cursor: pointer;" onclick="togglePassword()" id="eye-icon" />
       </div>
 
       <div id="error-msg" class="alert alert-danger d-none" role="alert">
-        Email atau password salah.
+        NIP/Username atau password salah.
       </div>
 
       <button type="submit" class="btn btn-success w-100 mb-3">Login</button>
 
-      <div class="text-center text-muted mb-2">atau masuk dengan</div>
-
-      <button type="button"
-        class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center gap-2"
-        onclick="dummyGoogleLogin()">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google"
-          style="width: 20px;" />
-        Login dengan Google
-      </button>
-
       <p class="mt-3 text-center small text-muted">
         Dengan masuk ke SIPEKAT, Anda menyetujui <a href="#">ketentuan & kebijakan privasi</a>.
       </p>
-
-      <div id="errorMsg" class="text-danger mb-3" style="display: none;">
-        Email atau password salah!
-      </div>
-
     </form>
   </div>
 
   <script>
-  function togglePassword() {
-    const password = document.getElementById("password");
-    const eye = document.getElementById("eye-icon");
-    if (password.type === "password") {
-      password.type = "text";
-      eye.src = "assets/eye-off.svg";
-    } else {
-      password.type = "password";
-      eye.src = "assets/eye.svg";
-    }
-  }
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-  document.getElementById("loginForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+      const identifier = document.getElementById("identifier").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("error-msg");
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const errorMsg = document.getElementById("error-msg");
-
-    if (email === "karyawan@google.com" && password === "karyawan123") {
-      window.location.href = "dashboard-karyawan.html";
-    } else if (email === "admin@gmail.com" && password === "admin123") {
-      window.location.href = "dashboard-admin.html";
-    } else {
-      errorMsg.classList.remove("d-none");
-    }
-  });
-
-  function dummyGoogleLogin() {
-    alert("Login Google berhasil (dummy).");
-    window.location.href = "dashboard-karyawan.html";
-  }
-</script>
+      // Dummy login
+      if (identifier === "1234567890" && password === "karyawan123") {
+        window.location.href = "dashboard-karyawan.html";
+      } else if (identifier.toLowerCase() === "admin" && password === "admin123") {
+        window.location.href = "dashboard-admin.html";
+      } else {
+        errorMsg.classList.remove("d-none");
+      }
+    });
+  </script>
 
 </body>
 
