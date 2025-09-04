@@ -173,6 +173,8 @@
 
 
 
+<!-- ... kode sebelumnya tetap ... -->
+
 <!-- Konten -->
 <div class="content-container">
   <div class="d-flex justify-content-between align-items-start flex-wrap mb-3">
@@ -187,6 +189,10 @@
     </div>
   </div>
 
+  <!-- ... kode sebelumnya tetap ... -->
+
+<!-- Container daftar peminjam -->
+<div id="listContainer">
   <!-- Contoh Card -->
   <div class="list-card">
     <div class="list-header">Pulpen Snowman</div>
@@ -202,7 +208,7 @@
         </div>
         <div class="list-item">
           <span>Waktu</span>
-          <strong>29 Juli 2025 10:00 - 30 Juli 2025 10:00</strong>
+          <strong>29 Juli 2025 10:00</strong>
         </div>
       </div>
     </div>
@@ -215,35 +221,29 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content rounded-4 shadow">
       <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title" id="formPengajuanLabel">Peminjam Alat Tulis Kantor saat ini</h5>
+        <h5 class="modal-title" id="formPengajuanLabel">Form Pengajuan ATK</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
       </div>
       <div class="modal-body pt-0">
-        <p class="text-muted mb-3">Halaman ini berisi peminjam alat tulis kantor saat ini</p>
-        <form>
+        <form id="pengajuanForm">
           <div class="mb-3">
             <label class="form-label">Pilih Alat Tulis Kantor</label>
-            <select class="form-select">
-              <option selected>Pilih Alat Tulis Kantor</option>
-              <option value="1">Pulpen</option>
-              <option value="2">Printer</option>
-              <option value="3">Stapler</option>
+            <select class="form-select" id="atk">
+              <option selected disabled>Pilih Alat Tulis Kantor</option>
+              <option value="Pulpen">Pulpen</option>
+              <option value="Printer">Printer</option>
+              <option value="Stapler">Stapler</option>
             </select>
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Waktu Mulai Penggunaan</label>
-            <input type="datetime-local" class="form-control">
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Batas Waktu Pengembalian</label>
-            <input type="datetime-local" class="form-control">
+            <label class="form-label">Waktu Pengajuan</label>
+            <input type="datetime-local" class="form-control" id="startTime">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Keperluan</label>
-            <textarea class="form-control" rows="3" placeholder="Tulis keperluan..."></textarea>
+            <textarea class="form-control" rows="3" id="purpose" placeholder="Tulis keperluan..."></textarea>
           </div>
 
           <button type="submit" class="btn btn-green w-100 mt-3">Ajukan Sekarang</button>
@@ -253,8 +253,77 @@
   </div>
 </div>
 
+
 <!-- Tambahkan Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ... kode sebelumnya tetap ... -->
+
+<script>
+  // Dummy nama user (nanti bisa diambil dari sistem login)
+  const userLogin = "Ahmad Ramadhan";
+
+  const form = document.getElementById("pengajuanForm");
+  const listContainer = document.getElementById("listContainer");
+  const atkSelect = document.getElementById("atk");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Cek apakah user sudah memilih ATK
+    if (!atkSelect.value || atkSelect.value === "Pilih Alat Tulis Kantor") {
+      alert("Silakan pilih Alat Tulis Kantor terlebih dahulu!");
+      return; // hentikan proses submit
+    }
+
+    // Ambil data dari form
+    const atk = atkSelect.value;
+    const start = document.getElementById("startTime").value;
+    const purpose = document.getElementById("purpose").value;
+
+    // Format tanggal biar lebih enak dibaca
+    const formatDate = (dateStr) => {
+      const d = new Date(dateStr);
+      return d.toLocaleString("id-ID", { dateStyle: "medium", timeStyle: "short" });
+    };
+
+    // Buat card baru
+    const newCard = document.createElement("div");
+    newCard.classList.add("list-card");
+    newCard.innerHTML = `
+      <div class="list-header">${atk}</div>
+      <div class="list-body">
+        <div class="list-row">
+          <div class="list-item">
+            <span>Peminjam</span>
+            <strong>${userLogin}</strong>
+          </div>
+          <div class="list-item">
+            <span>Keperluan</span>
+            <strong>${purpose}</strong>
+          </div>
+          <div class="list-item">
+            <span>Waktu</span>
+            <strong>${formatDate(start)}</strong>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Tambahkan ke daftar
+    listContainer.appendChild(newCard);
+
+    // Tutup modal setelah submit
+    const modal = bootstrap.Modal.getInstance(document.getElementById('formPengajuanModal'));
+    modal.hide();
+
+    // Reset form
+    form.reset();
+  });
+</script>
+
+
+
 
 </body>
 
